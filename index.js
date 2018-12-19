@@ -1,10 +1,8 @@
 let buttonPress = function(pick){
     userPick = pick;
     document.getElementById('user-pick').innerHTML = userPick.toUpperCase();
-    console.log('user picked ' + pick);
     compPick = computerPick();
     document.getElementById('comp-pick').innerHTML = compPick.toUpperCase();
-    console.log('computer picked ' + compPick);
     handWinner(userPick, compPick);
 }
 
@@ -27,19 +25,19 @@ let determineScore = function(winner){
         compScore += 1;
         compScElem.innerHTML = compScore;
     }
-    
+    game_winner(userScore, compScore);
 }
 
 let start = function(){
-    console.log('Let the fun begin');
     resetScores();
     document.getElementById('start-button').innerHTML = "Press to Restart";
-//   document.getElementByClassName('play-section')[0].style.visibility = 'inline-block';
+    document.getElementById('play-section').style.visibility = '';
+    document.getElementById('user-buttons').style.visibility = '';
+    document.getElementById('win-message').innerHTML = '';
 }
   
 let resetScores = function(){
     let scores = document.getElementsByClassName('scores')
-    console.log(scores)
     for (i =0; i < scores.length; i++){
         scores[i].innerHTML = 0;
     }
@@ -58,11 +56,22 @@ let handWinner = function(userP, compP){
     }else{
         winner ='computer';
     }
-    console.log(winner);
     determineScore(winner);
 }
 
 let win_message = function(winner){
-    //  document.getElementById('user-buttons').style.visibility = 'hidden';
+    document.getElementById('user-buttons').style.visibility = 'hidden';
     document.getElementById('win-message').innerHTML = "The winner of the game is: " + winner.toUpperCase();   
 }
+
+let game_winner = function(userScore, compScore){
+    if (userScore === 5){
+        win_message("You");
+    }else if (compScore === 5){
+        win_message("Computer");
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function(event) {
+    document.getElementById('play-section').style.visibility = 'hidden';
+})
