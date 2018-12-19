@@ -34,7 +34,7 @@ let start = function(){
     console.log('Let the fun begin');
     resetScores();
     document.getElementById('start-button').innerHTML = "Press to Restart";
-  <!--  document.getElementByClassName('play-section')[0].style.visibility = 'inline-block'; -->
+//   document.getElementByClassName('play-section')[0].style.visibility = 'inline-block';
 }
   
 let resetScores = function(){
@@ -63,6 +63,6 @@ let handWinner = function(userP, compP){
 }
 
 let win_message = function(winner){
- <!-- document.getElementById('user-buttons').style.visibility = 'hidden'; -->
+    //  document.getElementById('user-buttons').style.visibility = 'hidden';
     document.getElementById('win-message').innerHTML = "The winner of the game is: " + winner.toUpperCase();   
 }
