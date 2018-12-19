@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Rock, Paper, Scissors</title>
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <h1>Beat the Computer!</h1>
+        <h1>First to 5 wins</h1>
+        <button onclick="start()" id="start-button">Press to Play</button>
+        <div class="play-section" visibility="hidden">
+            <p> Make your selection: </p>
+            <div id="user-buttons">
+                <button onclick="buttonPress('rock');">ROCK</button>
+                <button onclick="buttonPress('paper');">PAPER</button>
+                <button onclick="buttonPress('scissors');">SCISSORS</button>
+            </div>
+            <h2>You selected: <span id="user-pick"></span></h2>
+            <h2>The computer selected: <span id="comp-pick"></span></h2>
+            <h2>The hand was won by: <span id="winner"></span></h2>
+            <h2>Current score is YOU: <span class="scores" id="user-score">0</span> COMPUTER: <span class="scores" id="comp-score">0</span></h2>
+            <h1 id="win-message"></h1>
+        </div>
+    </body>
+</html>
